@@ -1,1 +1,29 @@
+<form class="order__form-tag" id="order-form">
 
+<input class="order__form-input" name="name" type="text" placeholder="Имя" id = "name" />
+<br>
+<input class="order__form-input" name="phone" type="text" placeholder="Телефон" id = "phone" />
+<br>
+<input class="order__form-input" name="email" type="text" placeholder="Email" id = "email" />
+<br>
+<input class="order__form-button" name="" onclick='submitForm();'  type="submit" value="Заказать" style="cursor:pointer" />
+
+ </form>
+
+<div id="html_result"></div>
+
+
+<script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    function submitForm(){
+        $.get(
+            '/api.php',
+        {
+            name: $('#name').val(),
+            phone: $('#phone').val(),
+            email: $('#email').val()
+        }
+        );
+    }
+</script>
